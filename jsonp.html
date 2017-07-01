@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ajaxrequest</title>
+	<script>
+		function show(data){
+			alert(data);
+		}
+		
+		window.onload = function(){
+			var inp = document.getElementById('inp');
+			var btn = document.getElementById('btn');
+			btn.onclick = function(){
+				var ohead = document.getElementsByTagName('head')[0];
+				var oscript = document.createElement('script');
+				oscript.src = 'https://api.douban.com/v2/book/search?q='+inp.value;
+//				oscript.src ='show.js';
+				ohead.appendChild(oscript);
+
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="text" name="" id="inp" value="javascript">
+	<button id="btn">search</button>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jsonp</title>
+	<script>
+		function show(data){
+			alert(data);
+		}
+		
+		window.onload = function(){
+			var ohead = document.getElementsByTagName('head')[0];
+			var btn = document.getElementById('btn');
+			btn.onclick = function(){
+				var oscript = document.createElement('script');
+				oscript.src = 'show.js';
+				ohead.appendChild(oscript);
+			}
+		}
+	</script>
+</head>
+<body>
+	<button id="btn">click</button>
+</body>
+</html>
